@@ -1,0 +1,39 @@
+    Task0
+-> Am umplut matricea de puncte si am afisat-o ulterior.
+
+    Task1
+-> Am citit datele si le-am salvat dupa urmatoarea idee:
+    -Intr-un vector word am salvat fiecare cuvant in parte.
+    -Intr-un vector coordonate am salvat fiecare coordonata pentru fiecare cuvant.
+    -Primele 3 coordonate (y,x,d) din vectorul coordonate[] ii corespund primului cuvant din vectorul word[], urmatoarele 3 corespund celui de-al doilea cuvant din word[].
+-> Ulterior doar am introdus toate cuvintele din vectorul word[] in matricea mat[][] in functie de coordonatele corespunzatoare acestora.
+-> In final am afisat si matricea folosindu-ma de functia print_board().
+
+    Task2
+-> La aceasta cerinta nu am facut decat sa calculez scorul pentru fiecare cuvant in parte(verificand scorul fiecarei litere si dupa aceea adunand aceste scoruri).
+-> Pentru scorul primului player am lucrat cu pozitiile pare(am adunat la scorul jucatorului doar scorurile obtinute de cuvintele de pe pozitii pare).
+-> Pentru scorul celui de-al doilea player am procedat ca si la primul doar ca am lucrat cu pozitiile impare.
+
+    Task3
+-> Am calculat scorurile ca la task-ul anterior numai ca de aceasta data le-am salvat intr-un vector scoruri[](in care am mers pe aceeasi idee:par->player1,impar->player2).
+-> Am calculat bonusurile pentru fiecare cuvant in parte dupa regulile care au fost precizate in problema si le-am salvat intr-un vector score_multiplier[].
+-> Pentru a obtine scorurile cu bonusuri am realizat operatia scoruri[i]*score_multiplier[i],i=1,N.
+-> Am calculat scorul final pentru fiecare player(w pentru primul player si s pentru al doilea player) si le-am afisat.
+
+    Task4
+-> Am parcurs tot vectorul de cuvinte words[].
+-> Initial am verificat daca cuvantul a mai fost introdus in matrice sau nu.
+-> In caz contrar inseamna ca exista posibilitatea ca acesta sa fie introdus de catre noi.
+-> Daca gaseam o litera din matrice ce corespunde cu prima litera din cuvantul words[i] verificam daca acesta poate fi introdus pe orizontala(mai exact daca urmatoarele strlen(words[i]) de pe orizontala contin doar puncte).
+sau pe verticala(daca urmatoarele strlen(words[i]) casute de pe verticala din matrice contin doar puncte).
+-> In cazul in care aceasta regula este indeplinita introduceam cuvantul pe posibilitatea de plasare gasita si ne opream.
+-> In caz contrar treceam la cuvantul urmator(in cazul in care cuvantul la care ne aflam atunci nu poate fi introdus nicaieri in matrice).
+
+    Task5
+-> Pe aceeasi idee ca la task4 am parcurs tot vectorul de cuvinte words[] si am luat in calcul toate cuvintele care pot fi introduse in matrice.
+-> Ulterior am calculat scorurile pentru fiecare cuvant ce poate fi introdus(scorurile deoarece un cuvant putea fi plasat in mai multe moduri).
+-> Am calculat maximul de scor de poate fi obtinut prin introducerea unui cuvant.
+-> Pentru acest maxim am retinut pozitia cuvantului caruia ii corespunde si a cata posibilitate de plasare este(ex: in cazul in care un cuvant obtine scorurile 15 30=MAX 20 noi il vom introduce in a doua posibilitate de plasare).
+-> La inceputul task-ului am calculat scorul pentru fiecare player.
+-> Am verificat daca scorul celui de-al doilea player adunat cu maximul poate obtine un punctaj mai mare sau egal cu punctajul primului player.
+-> Daca da, am introdus cuvantul in matrice iar daca nu, am afisat mesajul Fail!.
